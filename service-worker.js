@@ -9,7 +9,7 @@ self.addEventListener('activate', e => {
             return caches.delete(name);
           }
         })
-      ).then(() => self.skipWaiting());
+      );
     })
   );
 });
