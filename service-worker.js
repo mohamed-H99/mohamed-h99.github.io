@@ -24,11 +24,6 @@ self.addEventListener('fetch', e => {
         });
         return res;
       })
-      .catch(() =>
-        caches
-          .match(e.request)
-          .then(res => res)
-          .then(() => self.skipWaiting())
-      )
+      .catch(() => caches.match(e.request).then(res => res))
   );
 });
